@@ -13,10 +13,10 @@ function App() {
   
   return (
     <Router>
-    <Link to="/list">Home</Link>
+    <Link to="/">Home</Link>
 
         <Routes>
-          <Route exact path="/list" element={<List />}>
+          <Route exact path="/" element={<List />}>
           </Route>
           <Route exact path="/details" element={<ProductView />} >
           </Route>

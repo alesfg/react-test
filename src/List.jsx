@@ -59,12 +59,7 @@ function List() {
 
 
   function handleSearchTermChange(event) {
-    console.log(event.target.value.length)
-    if (event.target.value='@') {
-      alert("We can´t search with special characters")
-    }else{
       setSearchTerm(event.target.value);
-    }
   }
   
   if (loading) {
@@ -81,7 +76,7 @@ function List() {
     <div>
       <h1>Products List</h1>
       <div>
-        <input type="text" value={searchTerm} onChange={handleSearchTermChange} autoFocus />
+        <input type="text" style={{background:'gray'}} value={searchTerm} onChange={handleSearchTermChange} autoFocus />
       </div>
       <table className="table table-striped">
         <thead>
@@ -98,7 +93,7 @@ function List() {
             <tr key={product.id}>
               <td>
               <Link to={`/details`}
-              state={[`${product.title}`,`${product.price}`]}
+              state={[`${product.title}`,`${product.price}`,`${product.description}`, `${product.thumbnail}`]}
                >
                 {product.title}
                 </Link>
